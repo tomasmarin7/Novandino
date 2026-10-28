@@ -1,0 +1,5 @@
+# Runtime portable; macOS resolves wheels for its own Python and architecture.
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+pydantic>=2.10,<3
+ortools>=9.12,<10

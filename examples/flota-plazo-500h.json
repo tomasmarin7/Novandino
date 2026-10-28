@@ -1,0 +1,243 @@
+{
+  "name": "Campaña de demostración",
+  "width": 1000,
+  "height": 700,
+  "seed": 42,
+  "depot": {
+    "x": 50.0,
+    "y": 50.0
+  },
+  "wells": [
+    {
+      "x": 635.1,
+      "y": 113.0,
+      "id": "P01",
+      "durations": {},
+      "water_demand": null
+    },
+    {
+      "x": 347.3,
+      "y": 216.1,
+      "id": "P02",
+      "durations": {},
+      "water_demand": null
+    },
+    {
+      "x": 711.8,
+      "y": 451.9,
+      "id": "P03",
+      "durations": {},
+      "water_demand": null
+    },
+    {
+      "x": 834.8,
+      "y": 145.2,
+      "id": "P04",
+      "durations": {},
+      "water_demand": null
+    },
+    {
+      "x": 463.3,
+      "y": 115.5,
+      "id": "P05",
+      "durations": {},
+      "water_demand": null
+    },
+    {
+      "x": 302.7,
+      "y": 362.8,
+      "id": "P06",
+      "durations": {},
+      "water_demand": null
+    }
+  ],
+  "machines": [
+    {
+      "id": "D01",
+      "kind": "rig",
+      "initial": {
+        "x": 50.0,
+        "y": 50.0
+      },
+      "speed": 400,
+      "radius": 0.0,
+      "simultaneous": 1,
+      "capacity": 1.0,
+      "setup": 0.0,
+      "disconnect": 0.0,
+      "available": 0
+    },
+    {
+      "id": "D02",
+      "kind": "rig",
+      "initial": {
+        "x": 50.0,
+        "y": 50.0
+      },
+      "speed": 400,
+      "radius": 0.0,
+      "simultaneous": 1,
+      "capacity": 1.0,
+      "setup": 0.0,
+      "disconnect": 0.0,
+      "available": 0
+    },
+    {
+      "id": "C01",
+      "kind": "compressor",
+      "initial": {
+        "x": 50.0,
+        "y": 50.0
+      },
+      "speed": 400,
+      "radius": 230.0,
+      "simultaneous": 2,
+      "capacity": 40.0,
+      "setup": 0.5,
+      "disconnect": 0.25,
+      "available": 0
+    },
+    {
+      "id": "C02",
+      "kind": "compressor",
+      "initial": {
+        "x": 50.0,
+        "y": 50.0
+      },
+      "speed": 400,
+      "radius": 230.0,
+      "simultaneous": 2,
+      "capacity": 40.0,
+      "setup": 0.5,
+      "disconnect": 0.25,
+      "available": 0
+    },
+    {
+      "id": "G01",
+      "kind": "generator",
+      "initial": {
+        "x": 50.0,
+        "y": 50.0
+      },
+      "speed": 400,
+      "radius": 280.0,
+      "simultaneous": 2,
+      "capacity": 80.0,
+      "setup": 0.5,
+      "disconnect": 0.25,
+      "available": 0
+    },
+    {
+      "id": "G02",
+      "kind": "generator",
+      "initial": {
+        "x": 50.0,
+        "y": 50.0
+      },
+      "speed": 400,
+      "radius": 280.0,
+      "simultaneous": 2,
+      "capacity": 80.0,
+      "setup": 0.5,
+      "disconnect": 0.25,
+      "available": 0
+    },
+    {
+      "id": "E01",
+      "kind": "test",
+      "initial": {
+        "x": 50.0,
+        "y": 50.0
+      },
+      "speed": 400,
+      "radius": 0.0,
+      "simultaneous": 1,
+      "capacity": 1.0,
+      "setup": 0.0,
+      "disconnect": 0.0,
+      "available": 0
+    },
+    {
+      "id": "E02",
+      "kind": "test",
+      "initial": {
+        "x": 50.0,
+        "y": 50.0
+      },
+      "speed": 400,
+      "radius": 0.0,
+      "simultaneous": 1,
+      "capacity": 1.0,
+      "setup": 0.0,
+      "disconnect": 0.0,
+      "available": 0
+    },
+    {
+      "id": "A01",
+      "kind": "water",
+      "initial": {
+        "x": 50.0,
+        "y": 50.0
+      },
+      "speed": 400,
+      "radius": 0.0,
+      "simultaneous": 1,
+      "capacity": 20.0,
+      "setup": 0.0,
+      "disconnect": 0.0,
+      "available": 0
+    }
+  ],
+  "durations": {
+    "prepare": 2.0,
+    "drill": 48.0,
+    "condition": 4.0,
+    "test_setup": 2.0,
+    "pump": 96.0,
+    "recovery": 24.0,
+    "test_remove": 2.0
+  },
+  "requirements": [
+    {
+      "kind": "compressor",
+      "phases": [
+        "drill",
+        "condition"
+      ],
+      "demand": 15.0
+    },
+    {
+      "kind": "generator",
+      "phases": [
+        "drill",
+        "condition",
+        "pump"
+      ],
+      "demand": 20.0
+    },
+    {
+      "kind": "fluid",
+      "phases": [],
+      "demand": 10.0
+    },
+    {
+      "kind": "test",
+      "phases": [
+        "test_setup",
+        "pump",
+        "recovery",
+        "test_remove"
+      ],
+      "demand": 1.0
+    }
+  ],
+  "water_demand": 12,
+  "tank_capacity": 20,
+  "delivery_time": 0.5,
+  "refill_time": 0.5,
+  "metric": "euclidean_demo",
+  "mode": "fleet",
+  "deadline": 500,
+  "time_limit": 12,
+  "candidates_per_well": 3
+}

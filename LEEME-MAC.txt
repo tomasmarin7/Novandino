@@ -1,0 +1,45 @@
+LITIO PLANNER — MAC
+===================
+
+Este paquete contiene código Python y React, el frontend ya compilado, casos de ejemplo
+y la formulación matemática. No contiene entornos Linux ni credenciales remotas.
+
+1. Descomprime litio-planner-mac.zip.
+2. Dentro de litio-planner, abre Instalar_en_Escritorio.command.
+   Crea ~/Desktop/litio-planner y copia allí el proyecto. Si la carpeta ya existe,
+   se detiene sin sobrescribirla. También puedes arrastrar la carpeta al Escritorio.
+3. En la carpeta del Escritorio, abre Iniciar.command.
+   Necesita Python 3.11 o posterior (recomendado 3.12). Si falta, lo indicará.
+   La primera vez instala las dependencias dentro de .venv en esta carpeta.
+4. Se abrirá tu navegador con el simulador. Mantén la ventana de Terminal abierta.
+   Para detener el servidor pulsa Ctrl+C en esa ventana.
+
+Python para Mac: https://www.python.org/downloads/macos/
+La instalación inicial de dependencias requiere Internet.
+No necesitas Node para utilizar el frontend ya compilado.
+
+Si macOS impide abrir un .command descargado, puedes ejecutar el script desde
+Terminal. Para abrir el proyecto una vez colocado en el escritorio:
+
+  cd "$HOME/Desktop/litio-planner"
+  bash Iniciar.command
+
+Si necesitas dar permiso de ejecución al archivo:
+
+  chmod u+x "$HOME/Desktop/litio-planner/Iniciar.command"
+
+El servidor se escucha únicamente en este Mac, en http://127.0.0.1:8000.
+Si ese puerto está ocupado por otra aplicación, el lanzador prueba el siguiente
+y muestra la dirección elegida. No se necesita SSH ni túnel de Internet.
+
+Para continuar desarrollando en Codex, abre ~/Desktop/litio-planner como proyecto
+local en tu Mac. Esta conversación sigue conectada al entorno remoto hasta que
+selecciones un entorno/proyecto local; descargar el ZIP no cambia esa conexión.
+
+Datos de ejemplo sintéticos. El óptimo corresponde a posiciones candidatas y
+tiempo discretizado, no a todos los puntos posibles del terreno real.
+Lee docs/MODELO.md y README.md para el alcance completo.
+
+Validación: la aplicación se probó en Linux/Chromium. Los scripts para macOS se
+comprobaron sintácticamente y el lanzador Python se probó en Linux; no hubo
+acceso a un Mac para ejecutar Finder o verificar dependencias nativas de macOS.
